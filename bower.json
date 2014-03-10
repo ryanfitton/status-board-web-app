@@ -1,0 +1,15 @@
+{
+  "name": "Status Board",
+  "version": "1",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "fastclick": "latest",
+    "font-awesome": "latest",
+    "less-elements" : "latest"
+  }
+}

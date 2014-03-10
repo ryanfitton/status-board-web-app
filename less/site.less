@@ -1,0 +1,79 @@
+//Site styling
+
+/* --- Page Body ------------------------- */
+html,body {
+  height: 100%;/* The html and body elements cannot have any padding or margin when using a Sticky Footer*/
+}
+
+
+
+/* --- Structural ------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -60px;/* Negative indent footer by its height */
+	padding: 0 0 60px;/* Pad bottom by footer height */
+}
+
+.row {
+	margin:0;/*Reset margins*/
+
+	.tile {
+		/*min-height: 24em;*//*Minimum Height of tiles*/
+		min-height: 20em;/*Phones and Small tables*/
+		/*max-height: 24em;*/
+		padding:1.2em;
+		margin-top:@grid-gutter-width;/*Space between top and bottom of tiles - variable set in Bootstrap variable.less*/
+		border-radius:5px;
+		background:@gray-darkest;/*Colour variable set in Bootstrap variable.less*/
+		background: -moz-linear-gradient(top, #0C0C0D 0%, #060606 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C0C0D), color-stop(100%,#060606)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #0C0C0D 0%,#060606 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #0C0C0D 0%,#060606 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #0C0C0D 0%,#060606 100%); /* IE10+ */
+		background: linear-gradient(top, #0C0C0D 0%,#060606 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+		border:1px solid #0C0C0D;
+		overflow:hidden;
+	}
+}
+
+
+
+/* --- Text Styling ------------------------- */
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    margin-top:0;
+    color:@gray-lighter;/*Colour variable set in Bootstrap variable.less*/
+    font-family: "nobilemedium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+	font-size:1.6em;
+	margin:0;
+}
+
+h2,.h2,h4,.h4 {
+	font-size:22px;/*Phones and Small tables*/
+}
+
+
+
+/* --- Footer ------------------------- */
+/*
+	#footer {
+	  height: 80px;
+	  background-color: @gray-darker;
+
+		.row {
+			div {
+				margin: 25px auto;
+			}
+		}
+
+		p {
+			font-size:1.4em;
+		}
+	}
+*/
