@@ -44,7 +44,7 @@
                 $(".response-container").load("ajax-response-small-tablet-view-size.php");
                 var refreshId = setInterval(function() {
                     $(".response-container").load('ajax-response-small-tablet-view-size.php?randval='+ Math.random());
-                }, 55000);//9000 = 9 seconds
+                }, 9000);//9000 = 9 seconds
                 $.ajaxSetup({ cache: false });
             });
         </script>

@@ -37,7 +37,7 @@ Depending on the screen size, the Ajax call will have to changed.
 
 If using ajax-response-desktop-view-size.php ensure this URL is used within the .load methods, if using ajax-response-small-tablet-view-size.php ensure the .load method is using this URL.
 
-The time between each refresh can be changed. The default is `55000` which is 55 seconds.
+The time between each refresh can be changed. The default is `9000` which is 9 seconds.
 
 More information regarding the Ajax refresh can be found here: [http://www.brightcherry.co.uk/scribbles/jquery-auto-refresh-div-every-x-seconds/](http://www.brightcherry.co.uk/scribbles/jquery-auto-refresh-div-every-x-seconds/)
 

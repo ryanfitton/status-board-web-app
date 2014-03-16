@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="col-md-3">
-                    <?php echo rssDataRender('Brickset News', 'http://brickset.com/feed', 5); ?>
+                    <?php echo rssDataRender('BBC News West Yorkshire', 'http://feeds.bbci.co.uk/news/england/leeds_and_west_yorkshire/rss.xml', 5); ?>
                 </div>
             </div>
 
