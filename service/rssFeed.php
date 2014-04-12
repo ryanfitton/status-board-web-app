@@ -25,29 +25,28 @@
 
 		}
 
-		if ($feed == null) {
-			return "Error recieving feed data.";
-
-		} else {
-			//Return multi-dimensional RSS feed array
-			return $feed;
-		}
+		//Return multi-dimensional RSS feed array
+		return $feed;
 	}
 
 
 	//Feed items as HTML list
 	function rssDataHtmlListRender($rssFeed, $limit) {
-
 		//Get raw data as an array
 		$rssItems = rssDataRaw($rssFeed, $limit);
 
-		$render = '<ul>';
+		//Check if RSS feed is returned
+		if ($rssItems) {
+			$render = '<ul>';
 
-			foreach ($rssItems as $key => $value) {
-				$render .= '<li><a href="'. $value['link'] .'">'. $value['title'] . '</a></li>';
-			}
+				foreach ($rssItems as $key => $value) {
+					$render .= '<li><a href="'. $value['link'] .'">'. $value['title'] . '</a></li>';
+				}
 
-		$render .= '</ul>';
+			$render .= '</ul>';
+		} else {
+			//Do something if no RSS feed is returned
+		}
 
 		return $render;
 	}
@@ -59,14 +58,28 @@
 		//Get data as a HTML formatted list
 		$data = rssDataHtmlListRender($rssFeed, $limit);
 
-		$render = '
-	        <div class="tile">
-	            <h2 class="text-center">' . $title . '</h2>
-	            <div class="widget rss-feed">
-	                ' . $data . '
-	            </div>
-	        </div>
-		';
+		//Check if data is returned from calling the above function
+        if ($data) {
+			$render = '
+		        <div class="tile">
+		            <h2 class="text-center">' . $title . '</h2>
+		            <div class="widget rss-feed">
+		                ' . $data . '
+		            </div>
+		        </div>
+			';
+        } else {
+            $render = '
+		        <div class="tile">
+		            <h2 class="text-center">' . $title . '</h2>
+		            <div class="widget rss-feed">
+                        <div class="row text-center">
+                            <h1 class="error">No data available</h1>
+                        </div>
+		            </div>
+		        </div>
+            ';
+        }
 
 		return $render;
 	}
