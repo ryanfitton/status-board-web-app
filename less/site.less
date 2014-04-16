@@ -11,6 +11,7 @@ html,body {
 
 /* Wrapper for page content to push down footer */
 #wrap {
+	background:@body-bg;/*Colour variable set in Bootstrap variable.less. Needed for HTML5 Fullscreen API on Android devices*/
 	min-height: 100%;
 	height: auto;
 	margin: 0 auto -60px;/* Negative indent footer by its height */
@@ -65,19 +66,17 @@ h2,.h2,h4,.h4 {
 
 
 /* --- Footer ------------------------- */
-/*
-	#footer {
-	  height: 80px;
-	  background-color: @gray-darker;
+#footer {
+  height: 80px;
+  background-color: @gray-darker;
 
-		.row {
-			div {
-				margin: 25px auto;
-			}
-		}
-
-		p {
-			font-size:1.4em;
+	.row {
+		div {
+			margin: 25px auto;
 		}
 	}
-*/
+
+	p {
+		font-size:1.4em;
+	}
+}

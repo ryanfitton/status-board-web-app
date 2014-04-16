@@ -13,6 +13,44 @@
         <script src="libs/jquery/jquery.min.js"></script>
         <script src="libs/fastclick/lib/fastclick.js"></script>
         <script src="libs/bootstrap/js/transition.js"></script>
+        <script>
+            // Full Screen Button Scripts
+            //Find the right method, call on correct element
+            function launchFullscreen(element) {
+              if(element.requestFullscreen) {
+                element.requestFullscreen();
+              } else if(element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+              } else if(element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+              } else if(element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+              }
+            }
+            function exitFullscreen() {
+              if(document.exitFullscreen) {
+                document.exitFullscreen();
+              } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+              } else if(document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+              }
+            }
+            function hideFullscreenButtons() {
+                $( "#fullscreen-buttons" ).hide();
+            }
+        </script>
+        <script type="text/javascript">
+            //Ajax page auto refresh
+            //http://www.brightcherry.co.uk/scribbles/jquery-auto-refresh-div-every-x-seconds/
+            $(document).ready(function() {
+                $(".response-container").load("ajax-response-small-tablet-view-size.php");
+                var refreshId = setInterval(function() {
+                    $(".response-container").load('ajax-response-small-tablet-view-size.php?randval='+ Math.random());
+                }, 9000);//9000 = 9 seconds
+                $.ajaxSetup({ cache: false });
+            });
+        </script>
 
         <!-- Mobile Device Setup -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><!-- Viewport -->
@@ -36,22 +74,16 @@
         <link rel="apple-touch-icon" href="img/icons/apple-touch-icon-60x60.png">
         <link rel="shortcut icon" href="img/icons/favicon.ico" />
         <link rel="ico" type="image/ico" href="img/icons/favicon.ico" />
-
-        <script type="text/javascript">
-            //Ajax page auto refresh
-            //http://www.brightcherry.co.uk/scribbles/jquery-auto-refresh-div-every-x-seconds/
-            $(document).ready(function() {
-                $(".response-container").load("ajax-response-small-tablet-view-size.php");
-                var refreshId = setInterval(function() {
-                    $(".response-container").load('ajax-response-small-tablet-view-size.php?randval='+ Math.random());
-                }, 9000);//9000 = 9 seconds
-                $.ajaxSetup({ cache: false });
-            });
-        </script>
     </head>
 
 
     <body>
+
+        <div id="fullscreen-buttons">
+            <button onclick="launchFullscreen(document.documentElement);">Launch Fullscreen</button>
+            <button onclick="exitFullscreen();">Hide Fullscreen</button>
+            <button onclick="hideFullscreenButtons();">Hide Buttons</button>
+        </div>
 
         <div id="wrap" class="response-container"><!-- Use wrap to keep footer sticky -->
             <!-- Ajax will load page content here -->
